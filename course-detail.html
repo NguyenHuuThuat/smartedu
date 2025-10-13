@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chi tiết khóa học • SmartEdu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style> body{font-family:'Poppins',sans-serif} .btn-grad{background:linear-gradient(to right,#0ea5e9,#6366f1);} </style>
+  <link rel="icon" href="images/logo_smartedu.png">
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="fixed w-full bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="images/logo_smartedu.png" alt="SmartEdu" class="h-10"><span class="text-indigo-600 font-bold">SmartEdu</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-gray-600">
+        <a href="index.html">Trang chủ</a>
+        <a href="about.html">Giới thiệu</a>
+        <a href="courses.html" class="font-semibold text-indigo-600">Khóa học</a>
+        <a href="learning-path.html">Lộ trình</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Course content container -->
+  <main class="pt-28 max-w-6xl mx-auto px-6 pb-16">
+    <!-- Banner area -->
+    <section id="courseBanner" class="rounded-xl overflow-hidden shadow mb-8">
+      <!-- filled by JS -->
+      <img id="course_banner_img" src="images/course_python.jpg" alt="Course banner" class="w-full h-64 object-cover">
+    </section>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Left: details -->
+      <div class="md:col-span-2">
+        <h1 id="course_title" class="text-2xl font-bold mb-4">Tên khóa học</h1>
+        <p id="course_sub" class="text-gray-600 mb-4">Mục tiêu ngắn gọn</p>
+
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-2">Mục tiêu khóa học</h3>
+          <ul id="course_goals" class="list-disc ml-5 text-gray-700"></ul>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-2">Nội dung tóm tắt</h3>
+          <ul id="course_outline" class="list-disc ml-5 text-gray-700"></ul>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <div class="text-sm text-gray-500">Thời lượng</div>
+            <div id="course_duration" class="font-semibold">—</div>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <div class="text-sm text-gray-500">Học phí</div>
+            <div id="course_price" class="font-semibold">—</div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold mb-2">Giảng viên</h3>
+          <p id="course_teacher" class="text-gray-700">Thông tin giảng viên</p>
+        </div>
+
+        <div class="mt-8">
+          <h3 class="text-lg font-semibold mb-2">Lịch khai giảng</h3>
+          <p id="course_start" class="text-gray-700">Liên hệ để biết lịch</p>
+        </div>
+
+        <div class="mt-10">
+          <a href="#registerForm" class="btn-grad inline-block px-6 py-3 rounded-full text-white font-semibold">Đăng ký / Nhận tư vấn</a>
+        </div>
+      </div>
+
+      <!-- Right: quick register -->
+      <aside class="p-6 bg-white rounded-xl shadow">
+        <h3 class="font-semibold text-lg mb-4">Đăng ký nhanh</h3>
+        <form id="quick_course_register" action="https://formspree.io/f/xeoalojj" method="POST">
+          <input type="hidden" name="course_id" id="form_course_id">
+          <div class="mb-3"><input name="name" required class="w-full border rounded-full px-4 py-2" placeholder="Họ và tên"></div>
+          <div class="mb-3"><input name="phone" required class="w-full border rounded-full px-4 py-2" placeholder="Số điện thoại"></div>
+          <div class="mb-3"><input name="email" class="w-full border rounded-full px-4 py-2" placeholder="Email (nếu có)"></div>
+          <div class="mb-3"><select name="level" class="w-full border rounded-full px-4 py-2">
+            <option value="">Chọn cấp học</option>
+            <option>Tiểu học</option><option>THCS</option><option>THPT</option><option>Sinh viên/Người đi làm</option>
+          </select></div>
+          <button class="btn-grad w-full rounded-full py-3 text-white font-semibold">Gửi đăng ký</button>
+        </form>
+      </aside>
+    </div>
+
+    <!-- Register form anchor -->
+    <section id="registerForm" class="mt-10 p-6 bg-indigo-50 rounded-xl">
+      <h3 class="text-xl font-semibold mb-4">Gửi yêu cầu tư vấn lộ trình</h3>
+      <form id="detailed_register" action="https://formspree.io/f/xeoalojj" method="POST">
+        <input type="hidden" name="course_id" id="detailed_course_id">
+        <div class="grid md:grid-cols-3 gap-4">
+          <input name="name" required class="border rounded-full px-4 py-2" placeholder="Họ tên">
+          <input name="phone" required class="border rounded-full px-4 py-2" placeholder="Số điện thoại">
+          <input name="email" class="border rounded-full px-4 py-2" placeholder="Email">
+        </div>
+        <div class="mt-4">
+          <textarea name="message" class="w-full border rounded-lg px-4 py-3" placeholder="Bạn muốn tư vấn điều gì?"></textarea>
+        </div>
+        <div class="mt-4 text-right">
+          <button class="btn-grad px-6 py-2 rounded-full text-white font-semibold">Gửi yêu cầu</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600">
+    © 2025 SmartEdu
+  </footer>
+
+  <!-- Floating contact -->
+  <div class="fixed right-6 bottom-6 flex flex-col gap-3">
+    <a href="https://zalo.me/0900000000" target="_blank"><img src="images/zalo_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="https://m.me/yourpage" target="_blank"><img src="images/messenger_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="tel:+84090000000"><img src="images/phone_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

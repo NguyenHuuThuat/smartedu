@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bài viết • SmartEdu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style> body{font-family:'Poppins',sans-serif} .btn-grad{background:linear-gradient(to right,#0ea5e9,#6366f1);} </style>
+  <link rel="icon" href="images/logo_smartedu.png">
+</head>
+<body class="bg-white text-gray-800">
+
+  <header class="fixed w-full bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2"><img src="images/logo_smartedu.png" class="h-10"><span class="text-indigo-600 font-bold">SmartEdu</span></a>
+      <nav class="hidden md:flex gap-6 text-gray-600">
+        <a href="index.html">Trang chủ</a>
+        <a href="about.html">Giới thiệu</a>
+        <a href="courses.html">Khóa học</a>
+        <a href="learning-path.html">Lộ trình</a>
+        <a href="blog.html" class="font-semibold text-indigo-600">Blog</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-28 max-w-4xl mx-auto px-6 pb-16">
+    <article id="blog_post" class="prose lg:prose-xl mx-auto" data-aos="fade-up">
+      <!-- Filled by JS based on slug -->
+      <header class="mb-6">
+        <h1 id="post_title" class="text-3xl font-bold">Tiêu đề bài viết</h1>
+        <div class="text-sm text-gray-500 mt-2" id="post_meta">Ngày • Tác giả</div>
+      </header>
+      <figure><img id="post_image" src="images/blog1.jpg" alt="hero" class="rounded-lg shadow mb-6"></figure>
+      <div id="post_content">
+        <p>Nội dung mẫu. Bài viết sẽ được load dựa trên query param.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600">© 2025 SmartEdu</footer>
+
+  <div class="fixed right-6 bottom-6 flex flex-col gap-3">
+    <a href="https://zalo.me/0900000000" target="_blank"><img src="images/zalo_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="https://m.me/yourpage" target="_blank"><img src="images/messenger_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="tel:+84090000000"><img src="images/phone_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

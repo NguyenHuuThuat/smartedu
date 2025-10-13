@@ -1,0 +1,201 @@
+/* ============================================
+   SmartEdu Style v1.0 — 2025
+   ============================================ */
+
+/* Reset */
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+a:hover { color: #0066ff; text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+/* Navbar */
+.navbar {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.navbar .nav-link {
+  font-weight: 500;
+  margin-left: 10px;
+  color: #333 !important;
+}
+.navbar .nav-link:hover { color: #0066ff !important; }
+.logo-1 { height: 48px; }
+
+/* ================= Banner ================= */
+.banner {
+  background: linear-gradient(135deg,#1a73e8,#7a60ff);
+  padding: 120px 0 80px;
+  color: #fff;
+  position: relative;
+}
+.banner h2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+.banner h3 {
+  font-size: 26px;
+  margin: 15px 0;
+  font-weight: 600;
+}
+.banner p {
+  font-size: 17px;
+  max-width: 540px;
+}
+.svg-wave img { width: 100%; display: block; }
+
+.btn-grad {
+  background: linear-gradient(to right,#0066ff,#7a60ff);
+  color: #fff !important;
+  border: none;
+  border-radius: 40px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.btn-grad:hover { opacity: 0.9; transform: translateY(-2px); }
+.btn-grad.small { padding: 0.4rem 0.8rem; font-size: 14px; }
+
+.about-btn {
+  border: 2px solid #fff;
+  border-radius: 40px;
+  padding: 0.6rem 1.4rem;
+  color: #fff;
+  display: inline-block;
+}
+.about-btn:hover {
+  background: #fff;
+  color: #1a73e8;
+}
+
+.quick-register .form-input {
+  border-radius: 40px;
+  padding: 0.6rem 1rem;
+  border: none;
+  outline: none;
+}
+
+/* Icon list in banner */
+.banner .list-inline-item {
+  color: #fff;
+  font-size: 15px;
+}
+
+/* ================= Sections ================= */
+.section-padding { padding: 80px 0; }
+.sectioner-header h3 {
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.sectioner-header .line {
+  display: inline-block;
+  width: 60px;
+  height: 4px;
+  background: #7a60ff;
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+
+/* Courses */
+.courses .slider-item {
+  text-align: center;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 25px 20px;
+  margin: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform .3s;
+}
+.courses .slider-item:hover { transform: translateY(-5px); }
+.courses h4 { font-size: 20px; font-weight: 600; margin-top: 10px; }
+.courses p { font-size: 15px; }
+
+/* About */
+.about ul li { margin-bottom: 8px; }
+.about img { border-radius: 10px; }
+
+/* Testimonials */
+.testimonials .slider-item {
+  background: #f7f9ff;
+  padding: 25px;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+/* Learning Path */
+.learning-path .card {
+  border: none;
+  background: #f8faff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform .3s;
+}
+.learning-path .card:hover { transform: translateY(-5px); }
+
+/* Blog */
+.blog .card {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border-radius: 10px;
+  transition: transform .3s;
+}
+.blog .card:hover { transform: translateY(-5px); }
+
+/* Contact */
+.contact form .form-input,
+.contact form select,
+.contact form textarea {
+  border-radius: 40px;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.contact form textarea { border-radius: 20px; height: 120px; resize: none; }
+
+/* Footer */
+footer {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Floating Contact Buttons */
+.floating-contact {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.floating-contact a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+.floating-contact a:hover img { transform: scale(1.05); }
+
+/* ================= Responsive ================= */
+@media (max-width: 991px) {
+  .banner { padding-top: 100px; }
+  .banner h2 { font-size: 36px; }
+  .banner h3 { font-size: 22px; }
+}
+@media (max-width: 767px) {
+  .banner { text-align: center; }
+  .banner .list-inline-item { display: block; margin: 8px 0; }
+}

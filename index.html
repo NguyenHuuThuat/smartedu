@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<!-- <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartEdu - Học thông minh, dẫn đầu công nghệ 4.0</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="images/logo_smartedu.png">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .btn-grad { background: linear-gradient(to right,#0ea5e9,#6366f1); }
+  </style>
+</head> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartEdu - Học thông minh, dẫn đầu công nghệ 4.0</title>
+
+  <!-- ✅ Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Font (Google) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ AOS animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="icon" href="images/logo_smartedu.png">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .btn-grad { background: linear-gradient(to right, #0ea5e9, #6366f1); }
+  </style>
+</head>
+
+
+
+<body class="bg-white text-gray-800">
+
+<!-- Header -->
+<header class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="images/logo_smartedu.png" alt="SmartEdu" class="h-10 w-auto">
+      <span class="text-indigo-600 font-bold text-xl">SmartEdu</span>
+    </a>
+
+    <!-- Menu desktop -->
+    <nav class="hidden md:flex gap-6 text-gray-600 font-medium">
+      <a href="index.html" class="text-indigo-600 font-semibold hover:text-indigo-700 transition">Trang chủ</a>
+      <a href="about.html" class="hover:text-indigo-600 transition">Giới thiệu</a>
+      <a href="courses.html" class="hover:text-indigo-600 transition">Khóa học</a>
+      <a href="learning-path.html" class="hover:text-indigo-600 transition">Lộ trình</a>
+      <a href="blog.html" class="hover:text-indigo-600 transition">Blog</a>
+      <a href="contact.html" class="hover:text-indigo-600 transition">Liên hệ</a>
+    </nav>
+
+    <!-- CTA + menu mobile -->
+    <div class="flex items-center gap-4">
+      <a href="contact.html" class="hidden md:inline-block btn-grad px-5 py-2 rounded-full text-white font-semibold shadow hover:opacity-90 transition">
+        Đăng ký học thử
+      </a>
+
+      <!-- Nút mở menu mobile -->
+      <button id="menuToggle" class="md:hidden text-indigo-600 text-2xl focus:outline-none">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="mobileMenu" class="hidden md:hidden flex-col bg-white border-t shadow-inner px-6 py-4 space-y-4 text-gray-700 font-medium">
+    <a href="index.html" class="hover:text-indigo-600">Trang chủ</a>
+    <a href="about.html" class="hover:text-indigo-600">Giới thiệu</a>
+    <a href="courses.html" class="hover:text-indigo-600">Khóa học</a>
+    <a href="learning-path.html" class="hover:text-indigo-600">Lộ trình</a>
+    <a href="blog.html" class="hover:text-indigo-600">Blog</a>
+    <a href="contact.html" class="hover:text-indigo-600">Liên hệ</a>
+    <a href="contact.html" class="btn-grad inline-block px-4 py-2 rounded-full text-white text-center font-semibold shadow hover:opacity-90">
+      Đăng ký học thử
+    </a>
+  </div>
+</header>
+
+<!-- JS menu -->
+<script src="https://kit.fontawesome.com/a2e0b6c4a6.js" crossorigin="anonymous"></script>
+<script>
+  const btn = document.getElementById('menuToggle');
+  const menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      btn.innerHTML = menu.classList.contains('hidden')
+        ? '<i class="fa-solid fa-bars"></i>'
+        : '<i class="fa-solid fa-xmark"></i>';
+    });
+  }
+</script>
+  <!-- AOS animation init -->
+
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white shadow-sm z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-xl text-indigo-600">
+        <img src="images/logo_smartedu.png" class="h-10" alt="SmartEdu"> SmartEdu
+      </a>
+      <nav class="hidden md:flex gap-6 text-gray-600 font-medium">
+        <a href="index.html" class="hover:text-indigo-600">Trang chủ</a>
+        <a href="about.html" class="hover:text-indigo-600">Giới thiệu</a>
+        <a href="courses.html" class="hover:text-indigo-600">Khóa học</a>
+        <a href="learning-path.html" class="hover:text-indigo-600">Lộ trình</a>
+        <a href="blog.html" class="hover:text-indigo-600">Blog</a>
+        <a href="contact.html" class="hover:text-indigo-600">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="pt-28 pb-20 bg-gradient-to-r from-sky-500 to-indigo-500 text-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10">
+      <div data-aos="fade-right">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Học thông minh – Phát triển tư duy – Dẫn đầu công nghệ 4.0</h1>
+        <p class="mb-6 text-lg">Trung tâm đào tạo Online về Toán, Tiếng Anh, Python, AI cho học sinh & người đi làm.</p>
+        <div class="flex gap-3">
+          <a href="contact.html" class="btn-grad px-6 py-3 rounded-full text-white font-semibold hover:scale-105 transition">Đăng ký học thử</a>
+          <a href="contact.html" class="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition">Nhận tư vấn</a>
+        </div>
+      </div>
+      <img src="images/banner_students_online.png" alt="Online Learning" class="rounded-xl shadow-lg" data-aos="fade-left">
+    </div>
+  </section>
+
+  <!-- 4 điểm nổi bật -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center" data-aos="fade-up">
+      <div><i class="fa-solid fa-laptop text-indigo-500 text-3xl mb-2"></i><p>100% học online trực tiếp</p></div>
+      <div><i class="fa-solid fa-users text-indigo-500 text-3xl mb-2"></i><p>Lớp nhỏ 1–5 học viên</p></div>
+      <div><i class="fa-solid fa-user-graduate text-indigo-500 text-3xl mb-2"></i><p>Giảng viên Thạc sĩ / IELTS 8.0 / Chuyên gia AI</p></div>
+      <div><i class="fa-solid fa-road text-indigo-500 text-3xl mb-2"></i><p>Lộ trình dài hạn & mentor hỗ trợ</p></div>
+    </div>
+  </section>
+
+  <!-- Khóa học nổi bật -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Khóa học nổi bật</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in">
+          <img src="images/course_math.jpg" class="rounded-lg mb-4" alt="">
+          <h3 class="font-semibold text-lg mb-2">Toán THPT – Nâng cao</h3>
+          <p class="text-gray-600 mb-3">Giải đề, tư duy logic, chuẩn bị thi đại học. 40 buổi.</p>
+          <a href="courses.html" class="text-indigo-600 font-semibold">Xem chi tiết →</a>
+        </div>
+        <div class="p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="100">
+          <img src="images/course_english.jpg" class="rounded-lg mb-4" alt="">
+          <h3 class="font-semibold text-lg mb-2">Tiếng Anh Cambridge / IELTS</h3>
+          <p class="text-gray-600 mb-3">Học chuẩn quốc tế, phát âm và kỹ năng 4 kỹ năng. 30 buổi.</p>
+          <a href="courses.html" class="text-indigo-600 font-semibold">Xem chi tiết →</a>
+        </div>
+        <div class="p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="200">
+          <img src="images/course_python.jpg" class="rounded-lg mb-4" alt="">
+          <h3 class="font-semibold text-lg mb-2">Python & AI cho học sinh</h3>
+          <p class="text-gray-600 mb-3">Làm quen lập trình, tư duy logic, dự án nhỏ. 24 buổi.</p>
+          <a href="courses.html" class="text-indigo-600 font-semibold">Xem chi tiết →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback -->
+  <section class="bg-indigo-50 py-20">
+    <div class="max-w-5xl mx-auto text-center px-6" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-8">Học viên nói gì về SmartEdu</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <blockquote class="p-6 bg-white rounded-xl shadow"><p>"Con tiến bộ rõ rệt sau 3 tháng học Toán online!"</p><span class="text-indigo-600 font-semibold">– Phụ huynh A</span></blockquote>
+        <blockquote class="p-6 bg-white rounded-xl shadow"><p>"Khóa Python giúp em hiểu logic và tự tin làm dự án."</p><span class="text-indigo-600 font-semibold">– Học viên B</span></blockquote>
+        <blockquote class="p-6 bg-white rounded-xl shadow"><p>"Giảng viên nhiệt tình, bài giảng sinh động."</p><span class="text-indigo-600 font-semibold">– Học viên C</span></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA cuối -->
+  <section class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-6">Sẵn sàng đồng hành cùng SmartEdu?</h2>
+    <a href="contact.html" class="btn-grad px-10 py-4 rounded-full text-white text-lg font-semibold hover:scale-105 transition">Đăng ký học thử ngay</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-8 text-center text-gray-600 text-sm">
+    © 2025 SmartEdu. Học thông minh – Dẫn đầu công nghệ 4.0.
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a2e0b6c4a6.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

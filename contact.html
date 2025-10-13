@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Liên hệ • SmartEdu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style> body{font-family:'Poppins',sans-serif} .btn-grad{background:linear-gradient(to right,#0ea5e9,#6366f1);} </style>
+  <link rel="icon" href="images/logo_smartedu.png">
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="fixed w-full bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2"><img src="images/logo_smartedu.png" class="h-10"><span class="text-indigo-600 font-bold">SmartEdu</span></a>
+      <nav class="hidden md:flex gap-6 text-gray-600">
+        <a href="index.html">Trang chủ</a>
+        <a href="about.html">Giới thiệu</a>
+        <a href="courses.html">Khóa học</a>
+        <a href="learning-path.html">Lộ trình</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="font-semibold text-indigo-600">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-28 max-w-5xl mx-auto px-6 pb-16">
+    <section class="text-center mb-8">
+      <h1 class="text-3xl font-bold" data-aos="fade-up">Đăng ký / Liên hệ</h1>
+      <p class="text-gray-600 mt-3" data-aos="fade-up" data-aos-delay="80">Đăng ký ngay – nhận tư vấn lộ trình miễn phí & ưu đãi 10% học phí nhóm.</p>
+    </section>
+
+    <section class="bg-white p-8 rounded-xl shadow" data-aos="fade-up">
+      <form id="contact_main_form" action="https://formspree.io/f/xeoalojj" method="POST">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input name="full_name" required class="border rounded-full px-4 py-2" placeholder="Họ và tên">
+          <input name="phone" required class="border rounded-full px-4 py-2" placeholder="Số điện thoại">
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mt-4">
+          <input name="email" class="border rounded-full px-4 py-2" placeholder="Email (nếu có)">
+          <select name="level" class="border rounded-full px-4 py-2">
+            <option value="">Chọn cấp học</option>
+            <option>Tiểu học</option><option>THCS</option><option>THPT</option><option>Sinh viên/Người đi làm</option>
+          </select>
+        </div>
+
+        <div class="mt-4">
+          <select name="course_interest" class="border rounded-full px-4 py-2 w-full">
+            <option value="">Khóa quan tâm</option>
+            <option>Toán</option><option>Tiếng Anh</option><option>Python/AI - Học sinh</option><option>Python/AI - Người đi làm</option>
+          </select>
+        </div>
+
+        <div class="mt-4">
+          <textarea name="message" class="w-full border rounded-lg px-4 py-3" placeholder="Ghi chú / Yêu cầu"></textarea>
+        </div>
+
+        <div class="mt-4 flex gap-4">
+          <button type="submit" class="btn-grad px-6 py-2 rounded-full text-white font-semibold">Gửi đăng ký</button>
+          <a href="tel:+84090000000" class="px-6 py-2 border rounded-full">Gọi ngay: 0900 000 000</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Map (placeholder) -->
+    <section class="mt-8">
+      <h3 class="font-semibold mb-2">Văn phòng (nếu có)</h3>
+      <div class="w-full h-64 bg-gray-100 rounded-xl flex items-center justify-center text-gray-500">Google Map placeholder — hãy thay bằng iframe Google Map nếu có địa chỉ</div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600">© 2025 SmartEdu</footer>
+
+  <div class="fixed right-6 bottom-6 flex flex-col gap-3">
+    <a href="https://zalo.me/0900000000" target="_blank"><img src="images/zalo_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="https://m.me/yourpage" target="_blank"><img src="images/messenger_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="tel:+84090000000"><img src="images/phone_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

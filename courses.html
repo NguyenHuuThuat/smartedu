@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Khóa học • SmartEdu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style> body { font-family:'Poppins',sans-serif } .btn-grad{background:linear-gradient(to right,#0ea5e9,#6366f1);} </style>
+  <link rel="icon" href="images/logo_smartedu.png">
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="fixed w-full bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="images/logo_smartedu.png" alt="SmartEdu" class="h-10"><span class="text-indigo-600 font-bold">SmartEdu</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-gray-600">
+        <a href="index.html">Trang chủ</a>
+        <a href="about.html">Giới thiệu</a>
+        <a href="courses.html" class="font-semibold text-indigo-600">Khóa học</a>
+        <a href="learning-path.html">Lộ trình</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="pt-28 pb-10 bg-gradient-to-r from-sky-200 to-indigo-200">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">Danh sách khóa học</h1>
+      <p class="text-gray-700 mt-3" data-aos="fade-up" data-aos-delay="80">Chọn nhóm khóa học phù hợp: Toán, Tiếng Anh, Python & AI.</p>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="max-w-6xl mx-auto px-6 py-10">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+      <div class="flex gap-3">
+        <button class="px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 font-medium">Tất cả</button>
+        <button class="px-4 py-2 rounded-full bg-gray-100">Toán</button>
+        <button class="px-4 py-2 rounded-full bg-gray-100">Tiếng Anh</button>
+        <button class="px-4 py-2 rounded-full bg-gray-100">Python & AI</button>
+      </div>
+      <div>
+        <input type="search" placeholder="Tìm khóa học..." class="border rounded-full px-4 py-2 w-full md:w-64">
+      </div>
+    </div>
+
+    <!-- Course grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Each card links to course-detail.html?id=slug -->
+      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up">
+        <img src="images/course_math.jpg" class="rounded-md mb-4" alt="">
+        <h3 class="font-semibold text-lg mb-2">Toán THCS (Cơ bản)</h3>
+        <p class="text-gray-600 mb-3">Củng cố nền tảng, rèn tư duy logic.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-sm text-gray-500">40 buổi • 2.500.000 VND</div>
+          <a href="course-detail.html?id=toan-thcs" class="text-indigo-600 font-semibold">Chi tiết →</a>
+        </div>
+      </article>
+
+      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="60">
+        <img src="images/course_math.jpg" class="rounded-md mb-4" alt="">
+        <h3 class="font-semibold text-lg mb-2">Toán THPT (Nâng cao)</h3>
+        <p class="text-gray-600 mb-3">Luyện đề, giải nhanh.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-sm text-gray-500">40 buổi • 2.800.000 VND</div>
+          <a href="course-detail.html?id=toan-thpt" class="text-indigo-600 font-semibold">Chi tiết →</a>
+        </div>
+      </article>
+
+      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="120">
+        <img src="images/course_python.jpg" class="rounded-md mb-4" alt="">
+        <h3 class="font-semibold text-lg mb-2">Python cơ bản (THCS)</h3>
+        <p class="text-gray-600 mb-3">Làm quen lập trình, tư duy thuật toán.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-sm text-gray-500">24 buổi • 2.000.000 VND</div>
+          <a href="course-detail.html?id=python-thcs" class="text-indigo-600 font-semibold">Chi tiết →</a>
+        </div>
+      </article>
+
+      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up">
+        <img src="images/course_python.jpg" class="rounded-md mb-4" alt="">
+        <h3 class="font-semibold text-lg mb-2">Python & AI cho sinh viên</h3>
+        <p class="text-gray-600 mb-3">Ứng dụng, project thực tế.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-sm text-gray-500">40 buổi • 4.000.000 VND</div>
+          <a href="course-detail.html?id=python-pro" class="text-indigo-600 font-semibold">Chi tiết →</a>
+        </div>
+      </article>
+
+      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="images/course_english.jpg" class="rounded-md mb-4" alt="">
+        <h3 class="font-semibold text-lg mb-2">Anh văn THCS (Cơ bản)</h3>
+        <p class="text-gray-600 mb-3">Nghe - Nói - Đọc - Viết.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-sm text-gray-500">30 buổi • 2.500.000 VND</div>
+          <a href="course-detail.html?id=eng-thcs" class="text-indigo-600 font-semibold">Chi tiết →</a>
+        </div>
+      </article>
+
+      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="images/course_english.jpg" class="rounded-md mb-4" alt="">
+        <h3 class="font-semibold text-lg mb-2">IELTS / Cambridge</h3>
+        <p class="text-gray-600 mb-3">Chuẩn đầu ra, chiến lược thi.</p>
+        <div class="flex items-center justify-between">
+          <div class="text-sm text-gray-500">30 buổi • 3.200.000 VND</div>
+          <a href="course-detail.html?id=ielts" class="text-indigo-600 font-semibold">Chi tiết →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600">
+    © 2025 SmartEdu
+  </footer>
+
+  <!-- Floating contact -->
+  <div class="fixed right-6 bottom-6 flex flex-col gap-3">
+    <a href="https://zalo.me/0900000000" target="_blank"><img src="images/zalo_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="https://m.me/yourpage" target="_blank"><img src="images/messenger_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="tel:+84090000000"><img src="images/phone_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
