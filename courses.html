@@ -1,133 +1,463 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Khóa học • SmartEdu</title>
+
+  <!-- Tailwind & AOS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style> body { font-family:'Poppins',sans-serif } .btn-grad{background:linear-gradient(to right,#0ea5e9,#6366f1);} </style>
+  <script src="https://kit.fontawesome.com/a3b4e0e9c5.js" crossorigin="anonymous"></script>
+
+  <!-- Style -->
+<style>
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(99,102,241,0.95), rgba(14,165,233,0.95));
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.arrow-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 14px rgba(99,102,241,0.5);
+}
+.arrow-btn.left-0 {
+  left: -24px; /* đẩy ra ngoài một chút */
+}
+.arrow-btn.right-0 {
+  right: -24px;
+}
+</style>
+
+
   <link rel="icon" href="images/logo_smartedu.png">
 </head>
+
 <body class="bg-white text-gray-800">
 
-  <!-- Header -->
-  <header class="fixed w-full bg-white shadow z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2">
-        <img src="images/logo_smartedu.png" alt="SmartEdu" class="h-10"><span class="text-indigo-600 font-bold">SmartEdu</span>
-      </a>
-      <nav class="hidden md:flex gap-6 text-gray-600">
-        <a href="index.html">Trang chủ</a>
-        <a href="about.html">Giới thiệu</a>
-        <a href="courses.html" class="font-semibold text-indigo-600">Khóa học</a>
-        <a href="learning-path.html">Lộ trình</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Liên hệ</a>
-      </nav>
-    </div>
-  </header>
+<!-- ✅ Header -->
+<header class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="images/logo_smartedu.png" alt="SmartEdu" class="h-10 w-auto">
+      <span class="text-indigo-600 font-bold text-xl">SmartEdu</span>
+    </a>
 
-  <!-- Hero -->
-  <section class="pt-28 pb-10 bg-gradient-to-r from-sky-200 to-indigo-200">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h1 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">Danh sách khóa học</h1>
-      <p class="text-gray-700 mt-3" data-aos="fade-up" data-aos-delay="80">Chọn nhóm khóa học phù hợp: Toán, Tiếng Anh, Python & AI.</p>
+    <nav class="hidden md:flex gap-6 text-gray-600 font-medium">
+      <a href="index.html">Trang chủ</a>
+      <a href="about.html">Giới thiệu</a>
+      <a href="courses.html" class="text-indigo-600 font-semibold">Khóa học</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Liên hệ</a>
+      <a href="payment.html" class="hover:text-indigo-600">Thanh toán</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ✅ Hero -->
+<section class="pt-28 pb-16 bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-center">
+  <div class="max-w-5xl mx-auto px-6">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">Danh mục khóa học SmartEdu</h1>
+    <p class="text-lg opacity-90 mb-6" data-aos="fade-up" data-aos-delay="100">
+      Lộ trình học cá nhân hóa – phát triển tư duy & kỹ năng công nghệ cho học sinh, sinh viên và người đi làm.
+    </p>
+    <a href="contact.html" class="btn-grad px-8 py-3 rounded-full font-semibold text-white hover:scale-105 transition" data-aos="fade-up" data-aos-delay="200">
+      Nhận tư vấn miễn phí
+    </a>
+  </div>
+</section>
+
+  <!-- ✅ Content sections -->
+  <main class="max-w-7xl mx-auto px-6 py-20 space-y-16">
+
+    <!-- 🐍 Python & AI Online -->
+  <section data-aos="fade-up">
+    <div class="max-w-7xl mx-auto flex items-center justify-between mb-6">
+      <h2 class="text-3xl font-bold text-indigo-600 flex items-center gap-2">
+        <i class="fa-brands fa-python text-yellow-500"></i> Python & AI
+      </h2>
+    </div>
+
+    <div class="relative">
+      <button class="arrow-btn left-0" onclick="scrollCarousel('pythonCarousel', -1)">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+    <!-- Carousel -->
+    <div id="pythonCarousel" class="flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory">
+
+      <!-- Python cơ bản cho học sinh THCS -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_python_thcs.jpg" alt="Python cơ bản cho học sinh THCS" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Python cơ bản cho học sinh THCS</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Học 3 tháng – Làm sản phẩm thật – Học code như chơi! Dành cho học sinh lớp 6–9.
+          </p>
+          <button onclick="toggleDetail('py1')" class="text-indigo-600 font-semibold hover:underline">Chi tiết ↓</button>
+        </div>
+        <div id="py1" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Hiểu tư duy lập trình, viết được game nhỏ hoặc chatbot đơn giản.</li>
+            <li><strong>Phương pháp:</strong> Học qua mini project – code như chơi – có mentor hỗ trợ.</li>
+            <li><strong>Thời lượng:</strong> 12 tuần (≈ 3 tháng).</li>
+            <li><strong>Học phí:</strong> 2.400.000 – 2.900.000đ / khóa (giảm 10% nhóm).</li>
+            <li><strong>Giảng viên:</strong> Thạc sĩ Bách Khoa, 5+ năm kinh nghiệm Python & AI.</li>
+            <li><strong>Đặc biệt:</strong> Mỗi học viên tạo 1 sản phẩm cá nhân & nhận feedback chi tiết.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Python & AI cơ bản cho học sinh THPT -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_python_ai_basic.jpg" alt="Python & AI cơ bản cho học sinh THPT" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Python & AI cơ bản cho học sinh THPT</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Làm project AI đầu tiên của bạn! Tìm hiểu Python, Data & trí tuệ nhân tạo cơ bản.
+          </p>
+          <button onclick="toggleDetail('py2')" class="text-indigo-600 font-semibold hover:underline">Chi tiết ↓</button>
+        </div>
+        <div id="py2" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Thành thạo Python nâng cao, dùng NumPy, Pandas, Matplotlib.</li>
+            <li><strong>Phương pháp:</strong> Học qua 3 mini project (Chatbot, AI nhận diện, phân tích dữ liệu).</li>
+            <li><strong>Thời lượng:</strong> 12 tuần (≈ 3 tháng).</li>
+            <li><strong>Học phí:</strong> 2.500.000 – 3.000.000đ / khóa (giảm 10% nhóm).</li>
+            <li><strong>Giảng viên:</strong> Thạc sĩ Bách Khoa, chuyên ngành AI, Data Science.</li>
+            <li><strong>Đặc biệt:</strong> Cuối khóa học viên bảo vệ project mini AI & nhận chứng nhận.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Python & AI nâng cao cho học sinh THPT -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_ai_advanced.jpg" alt="Python & AI nâng cao cho học sinh THPT" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Python & AI nâng cao (THPT)</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Làm project thật – luyện kỹ năng Machine Learning – chuẩn bị cho Đại học & du học.
+          </p>
+          <button onclick="toggleDetail('py3')" class="text-indigo-600 font-semibold hover:underline">Chi tiết ↓</button>
+        </div>
+        <div id="py3" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Thành thạo xử lý dữ liệu, Machine Learning, API, Portfolio cá nhân.</li>
+            <li><strong>Phương pháp:</strong> Học qua project thực tế (Phân tích dữ liệu, Chatbot AI, Game cảm xúc).</li>
+            <li><strong>Thời lượng:</strong> 12–14 tuần (≈ 3 tháng).</li>
+            <li><strong>Học phí:</strong> 3.500.000 – 4.000.000đ / khóa (giảm 10% nhóm).</li>
+            <li><strong>Giảng viên:</strong> Thạc sĩ AI – 5+ năm kinh nghiệm R&D tại doanh nghiệp công nghệ.</li>
+            <li><strong>Đặc biệt:</strong> Mentor 1:1 hỗ trợ project cá nhân & hướng dẫn portfolio du học.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Python & AI cho sinh viên / người đi làm -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_python_pro.jpg" alt="Python Pro cho sinh viên & người đi làm" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Python Pro – Dành cho sinh viên & người đi làm</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Lộ trình “Zero to Pro” – học từ nền tảng đến ứng dụng Data, Automation, AI thực tế.
+          </p>
+          <button onclick="toggleDetail('py4')" class="text-indigo-600 font-semibold hover:underline">Chi tiết ↓</button>
+        </div>
+        <div id="py4" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Thành thạo Python + Data Analysis + Automation + AI ứng dụng.</li>
+            <li><strong>Phương pháp:</strong> 100% thực hành – Project-based learning – Mentor hỗ trợ Zalo.</li>
+            <li><strong>Thời lượng:</strong> 16 tuần (≈ 4 tháng).</li>
+            <li><strong>Học phí:</strong> 4.000.000 – 4.500.000đ / khóa (giảm 10% nhóm).</li>
+            <li><strong>Giảng viên:</strong> Thạc sĩ Bách Khoa, kinh nghiệm Data/AI doanh nghiệp Fintech.</li>
+            <li><strong>Đặc biệt:</strong> Có Project thực tế & chứng nhận hoàn thành để ghi vào CV.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- AI cơ bản & ứng dụng thực tế -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_ai_basic.jpg" alt="AI cơ bản & ứng dụng thực tế" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">AI cơ bản & ứng dụng thực tế</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Học AI thật – làm thật – hiểu bản chất. Dành cho sinh viên & người đi làm muốn ứng dụng AI.
+          </p>
+          <button onclick="toggleDetail('py5')" class="text-indigo-600 font-semibold hover:underline">Chi tiết ↓</button>
+        </div>
+        <div id="py5" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Hiểu rõ AI, ML, DL & tạo 3 project thực tế (Chatbot, Vision, Regression).</li>
+            <li><strong>Phương pháp:</strong> 70% thực hành coding – 30% lý thuyết – Mentor 1:1 hỗ trợ project.</li>
+            <li><strong>Thời lượng:</strong> 16 tuần (≈ 4 tháng).</li>
+            <li><strong>Học phí:</strong> 5.000.000 – 5.500.000đ / khóa (giảm 10% nhóm).</li>
+            <li><strong>Giảng viên:</strong> Thạc sĩ AI, 5+ năm kinh nghiệm Data Science & R&D thực tế.</li>
+            <li><strong>Đặc biệt:</strong> Học viên có portfolio project & chứng nhận hoàn thành.</li>
+          </ul>
+        </div>
+      </div>
+      <button class="arrow-btn right-0" onclick="scrollCarousel('pythonCarousel', 1)">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+    
+  <!-- 🧮 Toán học Online -->
+  <section data-aos="fade-up">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-3xl font-bold text-indigo-600">Toán học</h2>
+    </div>
+
+    <div class="relative">
+      <button class="arrow-btn left-0" onclick="scrollCarousel('mathCarousel', -1)">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+    <!-- Carousel -->
+    <div id="mathCarousel" class="flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory">
+
+      <!-- Toán THCS Cơ bản -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_math_thcs.jpg" alt="Toán THCS Cơ bản" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Toán THCS – Cơ bản</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Dành cho học sinh lớp 6–9 cần củng cố nền tảng, hiểu bản chất Toán học, học theo phương pháp “hiểu để nhớ – làm để hiểu”.
+          </p>
+          <button onclick="toggleDetail('math1')" class="text-indigo-600 font-semibold hover:underline">Chi tiết ↓</button>
+        </div>
+        <div id="math1" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Hiểu bản chất Toán, rèn tư duy logic, nắm chắc các chuyên đề lớp 6–9.</li>
+            <li><strong>Phương pháp:</strong> Học qua ví dụ thực tế, có kiểm tra & phản hồi sau mỗi chủ đề.</li>
+            <li><strong>Thời lượng:</strong> 12 tuần (≈ 3 tháng).</li>
+            <li><strong>Học phí:</strong> 2.000.000–2.400.000đ / khóa (tuỳ sĩ số, giảm 10% học nhóm).</li>
+            <li><strong>Lớp học:</strong> Mỗi khối 6–7–8–9 có lớp riêng, học theo tiến độ từng cấp.</li>
+            <li><strong>Giảng viên:</strong> GV Sư phạm / Bách Khoa – giàu kinh nghiệm & gần gũi.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Toán THCS Nâng cao -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_math_thcs.jpg" alt="Toán THCS Nâng cao" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Toán THCS – Nâng cao</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Cho học sinh khá giỏi lớp 6–9 muốn thi học sinh giỏi, thi vào 10 chuyên, phát triển tư duy và phản xạ nhanh.
+          </p>
+          <button onclick="toggleDetail('math2')" class="text-indigo-600 font-semibold hover:underline">Chi tiết ↓</button>
+        </div>
+        <div id="math2" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Làm chủ kiến thức nâng cao – phương trình, hệ, cực trị, hình học khó.</li>
+            <li><strong>Phương pháp:</strong> Học qua đề HSG, phân tích tư duy giải ngược & chứng minh.</li>
+            <li><strong>Thời lượng:</strong> 12–14 tuần (≈ 3 tháng).</li>
+            <li><strong>Học phí:</strong> 2.400.000–2.800.000đ / khóa (giảm 10% nhóm).</li>
+            <li><strong>Lớp học:</strong> Mỗi khối 6–7–8–9 tách riêng để học đúng trình độ.</li>
+            <li><strong>Giảng viên:</strong> Thạc sĩ Bách Khoa / Sư phạm Toán, chuyên luyện thi HSG & chuyên.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Toán THPT Cơ bản -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_math_thpt.jpg" alt="Toán THPT Cơ bản" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Toán THPT – Cơ bản</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Học sinh lớp 10–12 muốn nắm chắc nền, hiểu sâu bài học, nâng điểm số, chuẩn bị thi tốt nghiệp.
+          </p>
+          <button onclick="toggleDetail('math3')" class="text-indigo-600 font-semibold hover:underline">Chi tiết ↓</button>
+        </div>
+        <div id="math3" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Nắm vững hàm số, đạo hàm, lượng giác, xác suất – thống kê.</li>
+            <li><strong>Phương pháp:</strong> Luyện đề thực tế, GV giảng chậm – giải thích bản chất từng dạng.</li>
+            <li><strong>Thời lượng:</strong> 12 tuần (≈ 3 tháng).</li>
+            <li><strong>Học phí:</strong> 2.400.000–2.800.000đ / khóa.</li>
+            <li><strong>Lớp học:</strong> Mỗi khối 10–11–12 có lớp riêng, phù hợp chương trình từng cấp.</li>
+            <li><strong>Giảng viên:</strong> GV THPT, luyện thi Đại học 5+ năm, phong cách dễ hiểu – logic.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Toán THPT Nâng cao -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_math_thpt.jpg" alt="Toán THPT Nâng cao" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Toán THPT – Nâng cao</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Dành cho học sinh khối A/A1, luyện thi Đại học, du học – rèn phản xạ, tư duy ngược và tối ưu thời gian làm bài.
+          </p>
+          <button onclick="toggleDetail('math4')" class="text-indigo-600 font-semibold hover:underline">Chi tiết ↓</button>
+        </div>
+        <div id="math4" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Làm chủ đề nâng cao – hệ phương trình, đạo hàm ứng dụng, hình học không gian.</li>
+            <li><strong>Phương pháp:</strong> Luyện đề chuyên sâu, thi thử mô phỏng Đại học, phản hồi cá nhân.</li>
+            <li><strong>Thời lượng:</strong> 12–14 tuần (≈ 3 tháng).</li>
+            <li><strong>Học phí:</strong> 2.800.000–3.200.000đ / khóa (giảm 10% nhóm).</li>
+            <li><strong>Lớp học:</strong> Mỗi khối 10–11–12 có lớp riêng, không học chung.</li>
+            <li><strong>Giảng viên:</strong> Thầy/Cô Đại học Sư phạm / Bách Khoa – chuyên luyện thi Đại học.</li>
+          </ul>
+        </div>
+      </div>
+      <button class="arrow-btn right-0" onclick="scrollCarousel('mathCarousel', 1)">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
   </section>
 
-  <!-- Filters -->
-  <section class="max-w-6xl mx-auto px-6 py-10">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-      <div class="flex gap-3">
-        <button class="px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 font-medium">Tất cả</button>
-        <button class="px-4 py-2 rounded-full bg-gray-100">Toán</button>
-        <button class="px-4 py-2 rounded-full bg-gray-100">Tiếng Anh</button>
-        <button class="px-4 py-2 rounded-full bg-gray-100">Python & AI</button>
+  <!-- 🇬🇧 Tiếng Anh Online -->
+  <section data-aos="fade-up">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-3xl font-bold text-indigo-600 flex items-center gap-2">
+        <i class="fa-solid fa-language text-indigo-500"></i> Tiếng Anh
+      </h2>
+    </div>
+
+    <!-- <div class="relative">
+      <button class="arrow-btn left-0" onclick="scrollCarousel('englishCarousel', -1)">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button> -->
+
+    <!-- Carousel -->
+    <div id="englishCarousel" class="flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory">
+      
+      <!-- Tiếng Anh THCS -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_english_thcs.jpg" alt="Tiếng Anh THCS" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Tiếng Anh THCS (Lớp 6–9)</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Củng cố ngữ pháp – từ vựng – phản xạ tự nhiên. Chuẩn Cambridge (KET, PET).
+          </p>
+          <button onclick="toggleDetail('eng1')" class="text-indigo-600 font-semibold hover:underline">
+            Chi tiết ↓
+          </button>
+        </div>
+        <div id="eng1" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Thành thạo 4 kỹ năng – nghe, nói, đọc, viết ở mức cơ bản & nâng cao.</li>
+            <li><strong>Phương pháp:</strong> Học qua chủ đề thực tế, video, game & thảo luận nhóm.</li>
+            <li><strong>Thời lượng:</strong> 12–14 tuần (≈ 3 tháng).</li>
+            <li><strong>Học phí:</strong> 2.000.000 – 2.800.000đ / khóa (giảm 10% nhóm).</li>
+            <li><strong>Lớp học:</strong> Mỗi khối 6–7–8–9 có lớp riêng, không học chung.</li>
+            <li><strong>Giảng viên:</strong> IELTS 7.5+, TESOL – kinh nghiệm dạy Cambridge & THCS.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tiếng Anh THPT -->
+      <div class="min-w-[300px] snap-start bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <img src="images/course_english_thpt.jpg" alt="Tiếng Anh THPT" class="h-48 w-full object-cover rounded-t-2xl">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Tiếng Anh THPT (Lớp 10–12)</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Luyện thi THPT, Đại học, IELTS – 4 kỹ năng toàn diện & phản xạ giao tiếp thực tế.
+          </p>
+          <button onclick="toggleDetail('eng2')" class="text-indigo-600 font-semibold hover:underline">
+            Chi tiết ↓
+          </button>
+        </div>
+        <div id="eng2" class="hidden border-t p-5 bg-indigo-50 text-sm text-gray-700">
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Mục tiêu:</strong> Củng cố ngữ pháp, từ vựng học thuật, luyện Speaking/Writing thực tế.</li>
+            <li><strong>Phương pháp:</strong> Học qua chủ đề học thuật & đời sống quốc tế, luyện đề IELTS thật.</li>
+            <li><strong>Thời lượng:</strong> 12–14 tuần (≈ 3 tháng).</li>
+            <li><strong>Học phí:</strong> 2.400.000 – 3.200.000đ / khóa (giảm 10% nhóm).</li>
+            <li><strong>Lớp học:</strong> Mỗi khối 10–11–12 tách riêng, học theo trình độ.</li>
+            <li><strong>Giảng viên:</strong> IELTS 8.0+, TESOL quốc tế, 5+ năm kinh nghiệm luyện thi.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- <button class="arrow-btn right-0" onclick="scrollCarousel('mathCarousel', 1)">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button> -->
+    </div>
+  </section>
+</main>
+
+
+<!-- ✅ CTA cuối -->
+<!-- ✅ CTA cuối (bản đẹp, nền gradient cũ) -->
+<section class="py-20 text-center bg-gradient-to-r from-sky-500 to-indigo-600 text-white">
+  <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">
+    Chọn khóa học phù hợp & bắt đầu hành trình học thông minh cùng SmartEdu!
+  </h2>
+  <p class="mb-8 text-lg opacity-90" data-aos="fade-up" data-aos-delay="100">
+    Học tập hiệu quả – Dẫn đầu công nghệ 4.0
+  </p>
+  <a href="contact.html" 
+     class="px-10 py-4 rounded-full font-semibold text-white bg-white/20 border border-white/40 hover:bg-white hover:text-indigo-700 transition duration-300 text-lg" 
+     data-aos="fade-up" data-aos-delay="200">
+    Đăng ký học ngay
+  </a>
+</section>
+
+
+<!-- ✅ Footer -->
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
+      <div>
+        <img src="images/logo_smartedu.png" alt="SmartEdu" class="h-12 mb-3">
+        <p class="text-sm">Trung tâm đào tạo Online về Toán, Tiếng Anh, Python & AI – giúp học sinh & người đi làm phát triển tư duy và công nghệ.</p>
       </div>
       <div>
-        <input type="search" placeholder="Tìm khóa học..." class="border rounded-full px-4 py-2 w-full md:w-64">
+        <h4 class="font-semibold text-white mb-3">Liên kết nhanh</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="courses.html" class="hover:text-white">Khóa học</a></li>
+          <li><a href="payment.html" class="hover:text-white">Hướng dẫn thanh toán</a></li>
+          <li><a href="contact.html" class="hover:text-white">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Liên hệ</h4>
+        <p class="text-sm">Hotline: <b>0364058928</b></p>
+        <p class="text-sm">Email: thuatngh@gmail.com</p>
       </div>
     </div>
-
-    <!-- Course grid -->
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Each card links to course-detail.html?id=slug -->
-      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up">
-        <img src="images/course_math.jpg" class="rounded-md mb-4" alt="">
-        <h3 class="font-semibold text-lg mb-2">Toán THCS (Cơ bản)</h3>
-        <p class="text-gray-600 mb-3">Củng cố nền tảng, rèn tư duy logic.</p>
-        <div class="flex items-center justify-between">
-          <div class="text-sm text-gray-500">40 buổi • 2.500.000 VND</div>
-          <a href="course-detail.html?id=toan-thcs" class="text-indigo-600 font-semibold">Chi tiết →</a>
-        </div>
-      </article>
-
-      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="60">
-        <img src="images/course_math.jpg" class="rounded-md mb-4" alt="">
-        <h3 class="font-semibold text-lg mb-2">Toán THPT (Nâng cao)</h3>
-        <p class="text-gray-600 mb-3">Luyện đề, giải nhanh.</p>
-        <div class="flex items-center justify-between">
-          <div class="text-sm text-gray-500">40 buổi • 2.800.000 VND</div>
-          <a href="course-detail.html?id=toan-thpt" class="text-indigo-600 font-semibold">Chi tiết →</a>
-        </div>
-      </article>
-
-      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="120">
-        <img src="images/course_python.jpg" class="rounded-md mb-4" alt="">
-        <h3 class="font-semibold text-lg mb-2">Python cơ bản (THCS)</h3>
-        <p class="text-gray-600 mb-3">Làm quen lập trình, tư duy thuật toán.</p>
-        <div class="flex items-center justify-between">
-          <div class="text-sm text-gray-500">24 buổi • 2.000.000 VND</div>
-          <a href="course-detail.html?id=python-thcs" class="text-indigo-600 font-semibold">Chi tiết →</a>
-        </div>
-      </article>
-
-      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up">
-        <img src="images/course_python.jpg" class="rounded-md mb-4" alt="">
-        <h3 class="font-semibold text-lg mb-2">Python & AI cho sinh viên</h3>
-        <p class="text-gray-600 mb-3">Ứng dụng, project thực tế.</p>
-        <div class="flex items-center justify-between">
-          <div class="text-sm text-gray-500">40 buổi • 4.000.000 VND</div>
-          <a href="course-detail.html?id=python-pro" class="text-indigo-600 font-semibold">Chi tiết →</a>
-        </div>
-      </article>
-
-      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-        <img src="images/course_english.jpg" class="rounded-md mb-4" alt="">
-        <h3 class="font-semibold text-lg mb-2">Anh văn THCS (Cơ bản)</h3>
-        <p class="text-gray-600 mb-3">Nghe - Nói - Đọc - Viết.</p>
-        <div class="flex items-center justify-between">
-          <div class="text-sm text-gray-500">30 buổi • 2.500.000 VND</div>
-          <a href="course-detail.html?id=eng-thcs" class="text-indigo-600 font-semibold">Chi tiết →</a>
-        </div>
-      </article>
-
-      <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-        <img src="images/course_english.jpg" class="rounded-md mb-4" alt="">
-        <h3 class="font-semibold text-lg mb-2">IELTS / Cambridge</h3>
-        <p class="text-gray-600 mb-3">Chuẩn đầu ra, chiến lược thi.</p>
-        <div class="flex items-center justify-between">
-          <div class="text-sm text-gray-500">30 buổi • 3.200.000 VND</div>
-          <a href="course-detail.html?id=ielts" class="text-indigo-600 font-semibold">Chi tiết →</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600">
-    © 2025 SmartEdu
+    <div class="text-center text-sm py-4 bg-gray-800">© 2025 SmartEdu. All rights reserved.</div>
   </footer>
 
-  <!-- Floating contact -->
   <div class="fixed right-6 bottom-6 flex flex-col gap-3">
-    <a href="https://zalo.me/0900000000" target="_blank"><img src="images/zalo_icon.png" class="h-12 w-12 rounded-full shadow"></a>
-    <a href="https://m.me/yourpage" target="_blank"><img src="images/messenger_icon.png" class="h-12 w-12 rounded-full shadow"></a>
-    <a href="tel:+84090000000"><img src="images/phone_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="https://zaloapp.com/qr/p/b0bw2k2jpmg7" target="_blank"><img src="images/zalo_icon.png" alt="Zalo" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="https://www.facebook.com/groups/1358551619024133" target="_blank"><img src="images/messenger_icon.png" alt="Messenger" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="tel:+84364058928"><img src="images/phone_icon.png" alt="Hotline" class="h-12 w-12 rounded-full shadow"></a>
   </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/main.js"></script>
+<!-- ✅ Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 800, once: true });
+
+function scrollCarousel(id, direction) {
+  const carousel = document.getElementById(id);
+  const scrollAmount = 320;
+  carousel.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
+
+function toggleDetail(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle("hidden");
+}
+</script>
 </body>
 </html>

@@ -19,9 +19,9 @@
         <a href="index.html">Trang chủ</a>
         <a href="about.html">Giới thiệu</a>
         <a href="courses.html">Khóa học</a>
-        <a href="learning-path.html">Lộ trình</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html" class="font-semibold text-indigo-600">Liên hệ</a>
+        <a href="payment.html" class="hover:text-indigo-600">Thanh toán</a>
       </nav>
     </div>
   </header>
@@ -33,51 +33,118 @@
     </section>
 
     <section class="bg-white p-8 rounded-xl shadow" data-aos="fade-up">
-      <form id="contact_main_form" action="https://formspree.io/f/xeoalojj" method="POST">
-        <div class="grid md:grid-cols-2 gap-4">
-          <input name="full_name" required class="border rounded-full px-4 py-2" placeholder="Họ và tên">
-          <input name="phone" required class="border rounded-full px-4 py-2" placeholder="Số điện thoại">
+    <form 
+        action="https://formspree.io/f/xrbyokan" 
+        method="POST" 
+        class="space-y-5"
+        onsubmit="alert('✅ Cảm ơn bạn! SmartEdu sẽ liên hệ trong vòng 24h.');"
+        >
+
+        <!-- Họ và tên -->
+        <div>
+            <label class="block font-semibold text-gray-700 mb-1">Họ và tên</label>
+            <input name="Họ và tên" type="text" placeholder="Nguyễn Văn A"
+                class="w-full p-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-indigo-400"
+                required>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-4 mt-4">
-          <input name="email" class="border rounded-full px-4 py-2" placeholder="Email (nếu có)">
-          <select name="level" class="border rounded-full px-4 py-2">
-            <option value="">Chọn cấp học</option>
-            <option>Tiểu học</option><option>THCS</option><option>THPT</option><option>Sinh viên/Người đi làm</option>
-          </select>
+        <!-- Số điện thoại -->
+        <div>
+            <label class="block font-semibold text-gray-700 mb-1">Số điện thoại</label>
+            <input name="Số điện thoại" type="tel" placeholder="090xxxxxxx"
+                class="w-full p-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-indigo-400"
+                required>
         </div>
 
-        <div class="mt-4">
-          <select name="course_interest" class="border rounded-full px-4 py-2 w-full">
-            <option value="">Khóa quan tâm</option>
-            <option>Toán</option><option>Tiếng Anh</option><option>Python/AI - Học sinh</option><option>Python/AI - Người đi làm</option>
-          </select>
+        <!-- Email -->
+        <div>
+            <label class="block font-semibold text-gray-700 mb-1">Email</label>
+            <input name="Email" type="email" placeholder="email@gmail.com"
+                class="w-full p-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-indigo-400">
         </div>
 
-        <div class="mt-4">
-          <textarea name="message" class="w-full border rounded-lg px-4 py-3" placeholder="Ghi chú / Yêu cầu"></textarea>
+        <!-- Cấp học -->
+        <div>
+            <label class="block font-semibold text-gray-700 mb-1">Cấp học</label>
+            <select name="Cấp học"
+                    class="w-full p-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-indigo-400"
+                    required>
+            <option value="">-- Chọn cấp học --</option>
+            <option>Tiểu học</option>
+            <option>THCS</option>
+            <option>THPT</option>
+            <option>Sinh viên / Người đi làm</option>
+            </select>
         </div>
 
-        <div class="mt-4 flex gap-4">
-          <button type="submit" class="btn-grad px-6 py-2 rounded-full text-white font-semibold">Gửi đăng ký</button>
-          <a href="tel:+84090000000" class="px-6 py-2 border rounded-full">Gọi ngay: 0900 000 000</a>
+        <!-- Khóa học quan tâm -->
+        <div>
+            <label class="block font-semibold text-gray-700 mb-1">Khóa học quan tâm</label>
+            <select name="Khóa học quan tâm"
+                    class="w-full p-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-indigo-400"
+                    required>
+            <option value="">-- Chọn khóa học --</option>
+            <option>Toán học</option>
+            <option>Tiếng Anh Cambridge / IELTS</option>
+            <option>Python & AI cho học sinh</option>
+            <option>Python & AI cho sinh viên / người đi làm</option>
+            </select>
         </div>
-      </form>
+
+        <!-- Ghi chú -->
+        <div>
+            <label class="block font-semibold text-gray-700 mb-1">Ghi chú thêm (nếu có)</label>
+            <textarea name="Ghi chú" rows="3" placeholder="Ví dụ: Muốn học buổi tối, học thử trước..."
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400"></textarea>
+        </div>
+
+        <!-- Ẩn cấu hình thêm cho Formspree -->
+        <input type="hidden" name="_subject" value="SmartEdu - Đăng ký học mới!">
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Gửi -->
+        <button type="submit" 
+                class="btn-grad w-full py-3 rounded-full text-white font-semibold hover:opacity-90 transition">
+            Gửi đăng ký
+        </button>
+
+        <p class="text-center text-sm text-gray-500 mt-3">
+            SmartEdu sẽ liên hệ lại trong vòng <b>24h</b> để tư vấn lộ trình học phù hợp nhất.
+        </p>
+
+    </form>
+
+        
     </section>
 
-    <!-- Map (placeholder) -->
-    <section class="mt-8">
-      <h3 class="font-semibold mb-2">Văn phòng (nếu có)</h3>
-      <div class="w-full h-64 bg-gray-100 rounded-xl flex items-center justify-center text-gray-500">Google Map placeholder — hãy thay bằng iframe Google Map nếu có địa chỉ</div>
-    </section>
-  </main>
-
-  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600">© 2025 SmartEdu</footer>
+    <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
+      <div>
+        <img src="images/logo_smartedu.png" alt="SmartEdu" class="h-12 mb-3">
+        <p class="text-sm">Trung tâm đào tạo Online về Toán, Tiếng Anh, Python & AI – giúp học sinh & người đi làm phát triển tư duy và công nghệ.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Liên kết nhanh</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="courses.html" class="hover:text-white">Khóa học</a></li>
+          <li><a href="payment.html" class="hover:text-white">Hướng dẫn thanh toán</a></li>
+          <li><a href="contact.html" class="hover:text-white">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Liên hệ</h4>
+        <p class="text-sm">Hotline: <b>0364058928</b></p>
+        <p class="text-sm">Email: thuatngh@gmail.com</p>
+      </div>
+    </div>
+    <div class="text-center text-sm py-4 bg-gray-800">© 2025 SmartEdu. All rights reserved.</div>
+  </footer>
 
   <div class="fixed right-6 bottom-6 flex flex-col gap-3">
-    <a href="https://zalo.me/0900000000" target="_blank"><img src="images/zalo_icon.png" class="h-12 w-12 rounded-full shadow"></a>
-    <a href="https://m.me/yourpage" target="_blank"><img src="images/messenger_icon.png" class="h-12 w-12 rounded-full shadow"></a>
-    <a href="tel:+84090000000"><img src="images/phone_icon.png" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="https://zaloapp.com/qr/p/b0bw2k2jpmg7" target="_blank"><img src="images/zalo_icon.png" alt="Zalo" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="https://www.facebook.com/groups/1358551619024133" target="_blank"><img src="images/messenger_icon.png" alt="Messenger" class="h-12 w-12 rounded-full shadow"></a>
+    <a href="tel:+84364058928"><img src="images/phone_icon.png" alt="Hotline" class="h-12 w-12 rounded-full shadow"></a>
   </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
